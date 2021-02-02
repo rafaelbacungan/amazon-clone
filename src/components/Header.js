@@ -2,14 +2,18 @@ import React from 'react'
 import './css/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
         <div className='header'>
-            <img 
-            src='https://mikekitko.com/wp-content/uploads/2019/10/amazon-logo-white.png' 
-            className='header__logo' 
-            />
+            <Link to="/">
+                <img 
+                src='https://mikekitko.com/wp-content/uploads/2019/10/amazon-logo-white.png' 
+                className='header__logo' 
+                />
+            </Link>
+
             <div
             className='header__search'
             >
@@ -46,12 +50,14 @@ function Header() {
                         Prime
                     </span>
                 </div>
-                <div className='header__optionBasket'>
-                    <ShoppingBasketIcon />
-                    <span className="header__optionLineTwo header__basketCount">
-                        0
-                    </span>
-                </div>
+                <Link to='/checkout'>
+                    <div className='header__optionBasket'>
+                            <ShoppingBasketIcon />
+                        <span className="header__optionLineTwo header__basketCount">
+                            0
+                        </span>
+                    </div>
+                </Link>
             </div>
         </div>
     )
